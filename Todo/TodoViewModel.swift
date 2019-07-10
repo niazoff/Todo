@@ -14,7 +14,12 @@ final class TodoViewModel {
   private var todo: Todo { didSet { _ = connection.update(todo) }}
   
   var id: Int { todo.id ?? preconditionFailure() }
-  var text: String { todo.description }
+  
+  var text: String {
+    get { todo.description }
+    set { todo.description = newValue }
+  }
+  
   var priorityText: String { todo.priority.text }
   
   var isComplete: Bool {

@@ -23,7 +23,7 @@ struct TodoView: View {
           .font(.system(size: Constants.checkmarkCircleFontSize))
           .foregroundColor(viewModel.isComplete ? .green : .gray)
       }
-      Text(verbatim: viewModel.text)
+      TextField($viewModel.text)
         .font(.system(size: Constants.textFontSize))
       Spacer()
       Text(verbatim: viewModel.priorityText)
